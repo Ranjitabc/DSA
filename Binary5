@@ -1,0 +1,18 @@
+//binary search with return index using stl
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5, 6};
+    int key = 4;
+
+    auto it = lower_bound(arr.begin(), arr.end(), key);
+    if (it != arr.end() && *it == key)
+        cout << "Element found at index " << it - arr.begin();
+    else
+        cout << "Element not found";
+
+    return 0;
+}
