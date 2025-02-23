@@ -1,0 +1,26 @@
+//binary search on floating point numbers
+#include <iostream>
+using namespace std;
+
+double binarySearch(double arr[], int size, double key) {
+    int left = 0, right = size - 1;
+    while (right - left > 1e-6) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == key)
+            return mid;
+        else if (arr[mid] < key)
+            left = mid;
+        else
+            right = mid;
+    }
+    return -1;
+}
+
+int main() {
+    double arr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    double key = 3.3;
+    double result = binarySearch(arr, size, key);
+    cout << (result != -1 ? "Element found at index " + to_string(result) : "Element not found");
+    return 0;
+}
