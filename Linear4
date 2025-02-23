@@ -1,0 +1,18 @@
+//linear search with stl
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<int> arr = {1, 3, 5, 7, 9};
+    int key = 5;
+
+    auto it = find(arr.begin(), arr.end(), key);
+    if (it != arr.end())
+        cout << "Element found at index " << distance(arr.begin(), it);
+    else
+        cout << "Element not found";
+
+    return 0;
+}
