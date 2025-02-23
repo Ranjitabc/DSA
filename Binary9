@@ -1,0 +1,27 @@
+//finding first or last occurrence 
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int firstOccurrence(vector<int> &arr, int key) {
+    auto it = lower_bound(arr.begin(), arr.end(), key);
+    if (it != arr.end() && *it == key)
+        return it - arr.begin();
+    return -1;
+}
+
+int lastOccurrence(vector<int> &arr, int key) {
+    auto it = upper_bound(arr.begin(), arr.end(), key);
+    if (it != arr.begin() && *(it - 1) == key)
+        return (it - arr.begin()) - 1;
+    return -1;
+}
+
+int main() {
+    vector<int> arr = {1, 2, 2, 3, 3, 3, 4, 5};
+    int key = 3;
+    cout << "First occurrence: " << firstOccurrence(arr, key) << endl;
+    cout << "Last occurrence: " << lastOccurrence(arr, key) << endl;
+    return 0;
+}
