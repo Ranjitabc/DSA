@@ -1,0 +1,24 @@
+//linear search on an array of structures
+#include <iostream>
+#include <vector>
+using namespace std;
+
+struct Student {
+    int id;
+    string name;
+};
+
+int linearSearch(vector<Student> &students, int key) {
+    for (int i = 0; i < students.size(); i++)
+        if (students[i].id == key)
+            return i;
+    return -1;
+}
+
+int main() {
+    vector<Student> students = {{1, "Alice"}, {2, "Bob"}, {3, "Charlie"}};
+    int key = 2;
+    int result = linearSearch(students, key);
+    cout << (result != -1 ? "Student found at index " + to_string(result) : "Student not found");
+    return 0;
+}
