@@ -1,0 +1,16 @@
+//binary search #include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    vector<int> arr = {1, 3, 5, 7, 9};
+    int key = 5;
+
+    if (binary_search(arr.begin(), arr.end(), key))
+        cout << "Element found";
+    else
+        cout << "Element not found";
+
+    return 0;
+}
