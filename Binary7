@@ -1,0 +1,17 @@
+//Binary search on a string
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string str = "abcdefg";
+    char key = 'e';
+
+    if (binary_search(str.begin(), str.end(), key))
+        cout << "Character found";
+    else
+        cout << "Character not found";
+
+    return 0;
+}
