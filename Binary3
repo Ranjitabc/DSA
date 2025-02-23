@@ -1,0 +1,17 @@
+//binary search using stl
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int arr[] = {1, 3, 5, 7, 9};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int key = 7;
+    
+    if (binary_search(arr, arr + size, key))
+        cout << "Element found";
+    else
+        cout << "Element not found";
+
+    return 0;
+}
