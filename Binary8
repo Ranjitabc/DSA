@@ -1,0 +1,26 @@
+//binary search with custom comparator
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Item {
+    int id;
+    string name;
+};
+
+bool compare(Item a, Item b) {
+    return a.id < b.id;
+}
+
+int main() {
+    vector<Item> items = {{1, "Apple"}, {2, "Banana"}, {3, "Cherry"}};
+    Item key = {2, "Banana"};
+
+    if (binary_search(items.begin(), items.end(), key, compare))
+        cout << "Item found";
+    else
+        cout << "Item not found";
+
+    return 0;
+}
